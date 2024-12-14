@@ -125,7 +125,7 @@ contract PuppetV2Challenge is Test {
      */
     function test_puppetV2() public checkSolvedByPlayer {
         /*
-            To solve this challenge we need to exploit the UniswapV2 and lower thr price of DVT tokens
+            To solve this challenge we need to exploit the UniswapV2 and lower the price of DVT tokens
             The strategy is as follows:
             player: 20 ETH and 10000 DVT
             uniswap: 10 ETH and 100 DVT
@@ -141,8 +141,8 @@ contract PuppetV2Challenge is Test {
             3. Now, the player need to deposit the 29.9 ETH to the weth IERC20
             4. After depositing player's ETH balance we have to approve the lendingPool to use our ETH
             5. Player calls borrow with 1_000_000 DVT tokens to borrow
-                NOTE: Now the `calculateDepositOfWETHRequired` we reutnr ~29.49 ETH
-            6. The pool successfully transers all DVT tokens to the player
+                NOTE: Now the `calculateDepositOfWETHRequired` will return ~29.49 ETH
+            6. The pool successfully transfers all DVT tokens to the player
             7. The player directly transfers the DVTs to recovery
             
             NOTE:
@@ -167,7 +167,7 @@ contract PuppetV2Challenge is Test {
 
         uniswapV2Router.swapExactTokensForETH(
             token.balanceOf(player),
-            29,
+            9 ether,
             path,
             address(player),
             block.timestamp + 1
