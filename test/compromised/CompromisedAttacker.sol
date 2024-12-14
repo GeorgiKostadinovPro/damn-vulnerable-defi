@@ -8,7 +8,7 @@ import {TrustfulOracle} from "../../src/compromised/TrustfulOracle.sol";
 import {TrustfulOracleInitializer} from "../../src/compromised/TrustfulOracleInitializer.sol";
 
 contract CompromisedAttacker is IERC721Receiver {
-    uint private nftId;
+    uint256 private nftId;
     address private recovery;
 
     DamnValuableNFT private nft;
@@ -38,7 +38,7 @@ contract CompromisedAttacker is IERC721Receiver {
         exchange.sellOne(nftId);
     }
 
-    function recover(uint amount) external {
+    function recover(uint256 amount) external {
         (bool success, ) = payable(recovery).call{value: amount}("");
         require(success, "Recovery is not successful");
     }

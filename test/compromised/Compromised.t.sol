@@ -106,7 +106,7 @@ contract CompromisedChallenge is Test {
             1. remove the empty spaces (create single string without spaces)
             2. convert the hex symbols to ASCII ones
             3. Call decodeBase64 with the converted string
-            Now you will receive the private key od sources 0 and 1
+            Now you will receive the private key of sources 0 and 1
             4. using ethers.js you can easily extract the public key:
                 const wallet = new ethers.Wallet(privateKey);
                 const publicKey = wallet.address;
