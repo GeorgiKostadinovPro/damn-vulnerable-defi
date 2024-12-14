@@ -53,7 +53,7 @@ contract BackdoorAttacker {
         // the attack path is => 1. attack() -> 2. createProxyWithCallback (for each beneficiary user)
         // -> 3. setup() (SaFe.sol) -> 4. delegateCall to = ApproveAttacker, data = approveTokens(dvt, BackdoorAttacker)
         // -> 5. proxyCreated() -> 6. the proxy created will be called 4 times transfering dvt to safeProxy
-        // -> 6. trnasfer dvt from safeProxy to BackdoorAttacker -> 7. transfer all dvt to recovery
+        // -> 6. transfer dvt from safeProxy to BackdoorAttacker -> 7. transfer all dvt to recovery
 
         for (uint256 user = 0; user < users.length; user++) {
             address[] memory owners = new address[](1);
